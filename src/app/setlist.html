@@ -1,0 +1,10 @@
+
+    <h2>Set List</h2>
+    <ul class="characters">
+      <li *ng-for="#setlist of setlists" (click)="onSelect(character)">
+        <span class="badge">{{character.id}}</span> {{character.name}}</a>
+      </li>
+    </ul>
+    <h2 *ng-if="currentCharacter">
+      {{currentCharacter.name | uppercase}} is my character
+    </h2>
