@@ -13,9 +13,7 @@ import {SetCreatorComponent} from './setcreator.component';
   <li role="presentation" class="active"><a [router-link]="['./Catalog']">Catalog</a></li>
   <li role="presentation"><a [router-link]="['./SetCreator']">Set Creator</a></li>
   <li role="presentation"><a [router-link]="['./SetList']">Set List</a></li>
-</ul>
-
-    
+</ul>    
     
     <router-outlet></router-outlet>
     `,
