@@ -4,3 +4,4 @@ export interface Song {
 	duration: number;
 	musicalKey: string;
 }
+

@@ -5,13 +5,13 @@ export class CatalogService {
 		return Songs;
 	}
 	addSong(title,duration,key){
-		var newId = Songs.length -1;
-		var newSong : Song;
-		newSong.id = newId;
-		newSong.title = title;
-		newSong.duration =duration;
-		newSong.musicalKey = key;
-		Songs.push(newSong);
+		var newId = Songs.length;
+		var tmpSong = new Song();
+		tmpSong.id=newId;
+		tmpSong.title = title;
+		tmpSong.duration=duration;
+		tmpSong.musicalKey =key;
+		Songs.push(tmpSong);
 	}
 	// getCatalogs() { return Promise.resolve(Songs); }
 	
