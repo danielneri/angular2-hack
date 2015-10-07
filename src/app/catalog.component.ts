@@ -1,19 +1,22 @@
 import {Component, NgFor, NgIf, View} from 'angular2/angular2';
 import {Router} from 'angular2/router';
-import {CharacterService} from './character.service';
-import {Character} from './character';
+import {Song} from './song';
+import {CatalogService} from './Catalog.service';
 
-@Component({ selector: 'my-characters' })
+@Component({ selector: 'my-songs' })
 @View({
   template: `
-    <h2>Select a Character</h2>
+    <h1>SONG CATALOG</h1>
+    <h2>Add a Song</h2>
+    <input placeholder="title"/> <input placeholder="duration"/> <input placeholder="key"/>
+    <h2>Songs in the Catalog</h2>
     <ul class="characters">
-      <li *ng-for="#character of characters" (click)="onSelect(character)">
-        <span class="badge">{{character.id}}</span> {{character.name}}</a>
+      <li *ng-for="#song of songs" (click)="onSelect(song)">
+        <span class="badge">{{song.id}}</span> {{song.title}}</a>
       </li>
     </ul>
-    <h2 *ng-if="currentCharacter">
-      {{currentCharacter.name | uppercase}} is my character
+    <h2 *ng-if="currentSong">
+      {{currentSong.name | uppercase}} is my character
     </h2>
   `,
   directives: [NgFor, NgIf],
@@ -24,25 +27,25 @@ import {Character} from './character';
   `]
 })
 export class CatalogComponent {
-  private _characters: Character[];
-  public currentCharacter: Character;
+  private _songs: Song[];
+  public currentSong: Song;
 
-  constructor(private _characterService: CharacterService) { }
+  constructor(private _catalogService: CatalogService) { }
 
-  get characters() {
-    return this._characters || this.getCharacters()
+  get songs() {
+    return this._songs || this.getSongs()
   }
 
-  onSelect(character: Character) { this.currentCharacter = character; }
+  onSelect(song: Song) { this.currentSong = song; }
 
   /////////////////
 
-  private getCharacters() {
-    this._characters = [];
+  private getSongs() {
+    this._songs = [];
 
-    this._characterService.getCharacters()
-      .then(characters => this._characters = characters);
+    this._songs = this._catalogService.getSongs();
+    //  .then(characters => this._songs = characters);
 
-    return this._characters;
+    return this._songs;
   }
 }
