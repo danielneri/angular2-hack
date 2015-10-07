@@ -1,9 +1,9 @@
 
     <h2>Set List</h2>
     <ul class="characters">
-      <li *ng-for="#setlist of setlists; #i = index" (click)="onSelect(character)">
+      <li *ng-for="#song of SetList; #i = index" (click)="onSelect(character)">
       	<h2>SET {{index}}</h2>
-        <span class="badge">{{character.id}}</span> {{character.name}}</a>
+        <span class="badge">{{song.title}}</span> {{character.name}}</a>
       </li>
     </ul>
     <!-- <h2 *ng-if="currentCharacter">
