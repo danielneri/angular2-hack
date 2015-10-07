@@ -1,7 +1,7 @@
 import {Component, NgFor, NgIf, View} from 'angular2/angular2';
 import {Router} from 'angular2/router';
-import {CharacterService} from './catalog.service';
-import {Character} from './catalog';
+import {CharacterService} from './character.service';
+import {Character} from './character';
 
 @Component({ selector: 'my-characters' })
 @View({

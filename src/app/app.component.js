@@ -11,6 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
+var catalog_component_1 = require('./catalog.component');
+var setlist_component_1 = require('./setlist.component');
+var setcreator_component_1 = require('./setcreator.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
@@ -21,9 +24,9 @@ var AppComponent = (function () {
             directives: [router_1.ROUTER_DIRECTIVES]
         }),
         router_1.RouteConfig([
-            { path: '/', as: 'Catalog', component: CatalogComponent },
-            { path: '/setcreator', as: 'SetCreator', component: SetCreatorComponent },
-            { path: '/setlist', as: 'SetList', component: SetListComponent }
+            { path: '/', as: 'Catalog', component: catalog_component_1.CatalogComponent },
+            { path: '/setcreator', as: 'SetCreator', component: setcreator_component_1.SetCreatorComponent },
+            { path: '/setlist', as: 'SetList', component: setlist_component_1.SetListComponent }
         ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
