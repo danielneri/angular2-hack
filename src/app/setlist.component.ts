@@ -1,6 +1,6 @@
 import {Component, NgFor, NgIf, View} from 'angular2/angular2';
 import {Router} from 'angular2/router';
-import {SetListService} from './character.service';
+import {SetListService} from './setlist.service';
 import {Character} from './character';
 
 @Component({ selector: 'my-characters' })
@@ -17,10 +17,10 @@ export class SetListComponent {
   private _characters: Character[];
   public currentCharacter: Character;
 
-  constructor(private _characterService: CharacterService) { }
+  constructor(private _setListService: SetListService) { }
 
-  get characters() {
-    return this._characters || this.getCharacters()
+  get setlists() {
+    return this._setListService.getSets();
   }
 
   onSelect(character: Character) { this.currentCharacter = character; }
