@@ -10,14 +10,16 @@ var CatalogService = (function () {
 exports.CatalogService = CatalogService;
 var Songs = [
     {
-        title: "",
-        duration: 5,
-        musicalKey: "G"
+        id: 0,
+        title: "Stairway to Heaven",
+        duration: 6,
+        musicalKey: "Am"
     },
     {
-        title: "",
+        id: 1,
+        title: "Something From Nothing",
         duration: 5,
-        musicalKey: "G"
+        musicalKey: "Em"
     }
 ];
 //# sourceMappingURL=Catalog.service.js.map
