@@ -6,14 +6,16 @@ import {DashboardComponent} from './dashboard.component';
 @Component({ selector: 'my-app' })
 @View({
   template: `
-    <a [router-link]="['./Dashboard']">Dashboard</a>
-    <a [router-link]="['./Characters']">Characters</a>
+    <a [router-link]="['./Catalog']">Catalog</a>
+    <a [router-link]="['./SetCreator']">Set Creator</a>
+    <a [router-link]="['./SetList']">Set List</a>
     <router-outlet></router-outlet>
     `,
   directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-  { path: '/', as: 'Dashboard', component: DashboardComponent },
-  { path: '/characters', as: 'Characters', component: CharactersComponent }
+  { path: '/', as: 'Catalog', component: CatalogComponent },
+  { path: '/setcreator', as: 'SetCreator', component: SetCreatorComponent },
+  { path: '/setlist', as: 'SetList', component: SetListComponent }
 ])
 export class AppComponent { }

@@ -11,20 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require('angular2/angular2');
 var router_1 = require('angular2/router');
-var characters_component_1 = require('./characters.component');
-var dashboard_component_1 = require('./dashboard.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         angular2_1.Component({ selector: 'my-app' }),
         angular2_1.View({
-            template: "\n    <a [router-link]=\"['./Dashboard']\">Dashboard</a>\n    <a [router-link]=\"['./Characters']\">Characters</a>\n    <router-outlet></router-outlet>\n    ",
+            template: "\n    <a [router-link]=\"['./Catalog']\">Catalog</a>\n    <a [router-link]=\"['./SetCreator']\">Set Creator</a>\n    <a [router-link]=\"['./SetList']\">Set List</a>\n    <router-outlet></router-outlet>\n    ",
             directives: [router_1.ROUTER_DIRECTIVES]
         }),
         router_1.RouteConfig([
-            { path: '/', as: 'Dashboard', component: dashboard_component_1.DashboardComponent },
-            { path: '/characters', as: 'Characters', component: characters_component_1.CharactersComponent }
+            { path: '/', as: 'Catalog', component: CatalogComponent },
+            { path: '/setcreator', as: 'SetCreator', component: SetCreatorComponent },
+            { path: '/setlist', as: 'SetList', component: SetListComponent }
         ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
