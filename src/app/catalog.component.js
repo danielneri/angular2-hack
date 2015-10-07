@@ -10,35 +10,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var character_service_1 = require('./character.service');
+var Catalog_service_1 = require('./Catalog.service');
 var CatalogComponent = (function () {
-    function CatalogComponent(_characterService) {
-        this._characterService = _characterService;
+    function CatalogComponent(_catalogService) {
+        this._catalogService = _catalogService;
     }
-    Object.defineProperty(CatalogComponent.prototype, "characters", {
+    Object.defineProperty(CatalogComponent.prototype, "songs", {
         get: function () {
-            return this._characters || this.getCharacters();
+            return this._songs || this.getSongs();
         },
         enumerable: true,
         configurable: true
     });
-    CatalogComponent.prototype.onSelect = function (character) { this.currentCharacter = character; };
+    CatalogComponent.prototype.addSong = function () {
+        this._catalogService.addSong(this.newTitle, this.newDuration, this.newKey);
+    };
+    // onSelect(song: Song) { this.currentSong = song; }
     /////////////////
-    CatalogComponent.prototype.getCharacters = function () {
-        var _this = this;
-        this._characters = [];
-        this._characterService.getCharacters()
-            .then(function (characters) { return _this._characters = characters; });
-        return this._characters;
+    CatalogComponent.prototype.getSongs = function () {
+        this._songs = [];
+        this._songs = this._catalogService.getSongs();
+        //  .then(characters => this._songs = characters);
+        return this._songs;
     };
     CatalogComponent = __decorate([
-        angular2_1.Component({ selector: 'my-characters' }),
+        angular2_1.Component({ selector: 'my-songs' }),
         angular2_1.View({
-            template: "\n    <h2>Select a Character</h2>\n    <ul class=\"characters\">\n      <li *ng-for=\"#character of characters\" (click)=\"onSelect(character)\">\n        <span class=\"badge\">{{character.id}}</span> {{character.name}}</a>\n      </li>\n    </ul>\n    <h2 *ng-if=\"currentCharacter\">\n      {{currentCharacter.name | uppercase}} is my character\n    </h2>\n  ",
+            template: "\n    <h1>SONG CATALOG</h1>\n    <h2>Add a Song</h2>\n    <input placeholder=\"title\"/> <input placeholder=\"duration\"/> <input placeholder=\"key\"/>\n    <button (click)=\"addSong()\">Add Song</button>\n    <h2>Songs in the Catalog</h2>\n    <ul class=\"characters\">\n      <li *ng-for=\"#song of songs\" (click)=\"onSelect(song)\">\n        <span class=\"badge\">{{song.id}}</span> {{song.title}}</a>\n      </li>\n    </ul>\n    <h2 *ng-if=\"currentSong\">\n      {{currentSong.name | uppercase}} is my character\n    </h2>\n  ",
             directives: [angular2_1.NgFor, angular2_1.NgIf],
             styles: ["\n    .characters {list-style-type: none; margin-left: 1em; padding: 0; width: 14em;}\n    .characters li { cursor: pointer; }\n    .characters li:hover {color: #369; background-color: #EEE; }\n  "]
         }), 
-        __metadata('design:paramtypes', [character_service_1.CharacterService])
+        __metadata('design:paramtypes', [Catalog_service_1.CatalogService])
     ], CatalogComponent);
     return CatalogComponent;
 })();

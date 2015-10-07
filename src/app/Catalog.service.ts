@@ -4,8 +4,14 @@ export class CatalogService {
 	getSongs() {
 		return Songs;
 	}
-	addSong(Song){
-		Songs.push(Song);
+	addSong(title,duration,key){
+		var newId = Songs.length -1;
+		var newSong : Song;
+		newSong.id = newId;
+		newSong.title = title;
+		newSong.duration =duration;
+		newSong.musicalKey = key;
+		Songs.push(newSong);
 	}
 	// getCatalogs() { return Promise.resolve(Songs); }
 	
