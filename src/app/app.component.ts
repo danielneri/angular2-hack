@@ -9,9 +9,14 @@ import {SetCreatorComponent} from './setcreator.component';
 @Component({ selector: 'my-app' })
 @View({
   template: `
-    <a [router-link]="['./Catalog']">Catalog</a>
-    <a [router-link]="['./SetCreator']">Set Creator</a>
-    <a [router-link]="['./SetList']">Set List</a>
+  <ul class="nav nav-pills">
+  <li role="presentation" class="active"><a [router-link]="['./Catalog']">Catalog</a></li>
+  <li role="presentation"><a [router-link]="['./SetCreator']">Set Creator</a></li>
+  <li role="presentation"><a [router-link]="['./SetList']">Set List</a></li>
+</ul>
+
+    
+    
     <router-outlet></router-outlet>
     `,
   directives: [ROUTER_DIRECTIVES]
