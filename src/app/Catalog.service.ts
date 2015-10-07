@@ -6,11 +6,13 @@ export class CatalogService {
 	}
 	addSong(title,duration,key){
 		var newId = Songs.length;
-		var tmpSong = new Song();
-		tmpSong.id=newId;
-		tmpSong.title = title;
-		tmpSong.duration=duration;
-		tmpSong.musicalKey =key;
+		var tmpSong :  Song = {
+			id:newId,
+		title :title,
+		duration:duration,
+		musicalKey :key
+
+		}
 		Songs.push(tmpSong);
 	}
 	// getCatalogs() { return Promise.resolve(Songs); }
