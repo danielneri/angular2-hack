@@ -34,7 +34,7 @@ var SetListComponent = (function () {
     SetListComponent = __decorate([
         angular2_1.Component({ selector: 'my-characters' }),
         angular2_1.View({
-            template: "\n    <h2>Select a Character</h2>\n    <ul class=\"characters\">\n      <li *ng-for=\"#character of characters\" (click)=\"onSelect(character)\">\n        <span class=\"badge\">{{character.id}}</span> {{character.name}}</a>\n      </li>\n    </ul>\n    <h2 *ng-if=\"currentCharacter\">\n      {{currentCharacter.name | uppercase}} is my character\n    </h2>\n  ",
+            templateUrl: '/src/app/setlist.html',
             directives: [angular2_1.NgFor, angular2_1.NgIf],
             styles: ["\n    .characters {list-style-type: none; margin-left: 1em; padding: 0; width: 14em;}\n    .characters li { cursor: pointer; }\n    .characters li:hover {color: #369; background-color: #EEE; }\n  "]
         }), 

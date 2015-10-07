@@ -20,7 +20,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         angular2_1.Component({ selector: 'my-app' }),
         angular2_1.View({
-            template: "\n    <a [router-link]=\"['./Catalog']\">Catalog</a>\n    <a [router-link]=\"['./SetCreator']\">Set Creator</a>\n    <a [router-link]=\"['./SetList']\">Set List</a>\n    <router-outlet></router-outlet>\n    ",
+            template: "\n  <ul class=\"nav nav-pills\">\n  <li role=\"presentation\" class=\"active\"><a [router-link]=\"['./Catalog']\">Catalog</a></li>\n  <li role=\"presentation\"><a [router-link]=\"['./SetCreator']\">Set Creator</a></li>\n  <li role=\"presentation\"><a [router-link]=\"['./SetList']\">Set List</a></li>\n</ul>    \n    \n    <router-outlet></router-outlet>\n    ",
             directives: [router_1.ROUTER_DIRECTIVES]
         }),
         router_1.RouteConfig([
